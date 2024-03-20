@@ -1,17 +1,17 @@
 <div class="container bg-light card card-theme card shadow">
     <h3 class="text-center mt-3 mb-3 p-3">Reserveren</h3>
-    <form>
+  <form #form="ngForm" (ngSubmit)="onFormSubmit(form.value)">
       <div class="form-group">
         <label>Naam</label>
-        <input type="text" class="form-control" name="BookingName">
+        <input type="text" class="form-control" name="BookingName" [(ngModel)]="model.bookingName">
       </div>
       <div class="form-group">
         <label>Personen</label>
-        <input type="number" class="form-control w-25" name="BookingAmount" placeholder="aantal personen">
+        <input type="number" class="form-control w-25" name="BookingAmount" [(ngModel)]="model.bookingamount" placeholder="aantal personen">
       </div>
       <div class="form-group">
         <label>Datum</label>
-        <input type="date" class="form-control w-25" name="BookingDate">
+        <input type="date" class="form-control w-25" name="BookingDate" [(ngModel)]="model.bookingdate">
       </div>
       <input type="submit" value="Reserveren" class="btn btn-primary">
     </form>
